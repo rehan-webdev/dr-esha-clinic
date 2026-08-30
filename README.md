@@ -40,7 +40,28 @@ directly in Dt. Momina's WhatsApp inbox.
 
 ---
 
+## Link preview (share image)
+
+Sharing the site link on WhatsApp, Facebook, Instagram DMs, LinkedIn, iMessage
+or X renders a preview card built from `public/og-cover.jpg` (1200×630) and the
+Open Graph / Twitter meta tags in `index.html`.
+
+Two things to check before deploying:
+
+1. **Site URL** — `og:image` must be an absolute URL, so `index.html` hardcodes
+   `https://rehan-webdev.github.io/dr-momina/`. On a custom domain, find and
+   replace that string (it appears in `canonical`, `og:url`, `og:image`,
+   `og:image:secure_url` and `twitter:image`).
+2. **The image** — swap `public/og-cover.jpg` for any 1200×630 image under
+   ~300 KB; update `og:image:width` / `og:image:height` if the size changes.
+
+Already-shared links are cached aggressively. Force a re-scrape with the
+[Facebook sharing debugger](https://developers.facebook.com/tools/debug/).
+
+---
+
 ## Color palette
+
 
 | Role | Name | HEX | Tailwind token |
 | --- | --- | --- | --- |
