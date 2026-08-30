@@ -34,7 +34,7 @@ const testimonials = [
   {
     video: "/testimonials/WhatsApp%20Video%202026-08-30%20at%205.00.32%20PM.mp4",
     quote:
-      "My transformation journey has been life-changing. I gained confidence and strength while building healthy habits that last.",
+      "45 kg → 61 kg | Weight Gain Transformation A healthy weight-gain journey with personalized nutrition and consistent guidance. +16 kg Transformation Personalized Diet Planning Online Consultations By Dietitian Esha Nasir",
     author: "Weight Gain Success Story",
   },
 ];

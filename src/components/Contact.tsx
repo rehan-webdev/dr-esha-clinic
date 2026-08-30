@@ -1,4 +1,5 @@
-import { ArrowUpRight, Mail, MapPin, MessageCircle, UserRound } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle, UserRound, Globe } from "lucide-react";
+import { SiWhatsapp, SiInstagram } from "react-icons/si";
 import { Reveal, ScriptLabel, SectionTitle } from "./ui";
 
 const details = [
@@ -59,11 +60,40 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-4 text-[14px] leading-[1.8] text-cream/80">
-              <p>📱 WhatsApp: +923407553114</p>
-              <p>📸 Instagram: @dt.eshanasir</p>
-              <p>📸 Instagram: @dietitian_esha_nasir</p>
-              <p>🌍 Online Consultations: Pakistan & International</p>
+            <div className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-6">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-cream/60 mb-4">Contact Information</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-cream flex-shrink-0">
+                    <SiWhatsapp size={14} />
+                  </span>
+                  <a href="https://wa.me/923407553114" target="_blank" rel="noreferrer" className="text-[13px] text-cream hover:text-white transition-colors">
+                    WhatsApp: +923407553114
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-cream flex-shrink-0">
+                    <SiInstagram size={14} />
+                  </span>
+                  <div className="text-[13px]">
+                    <a href="https://www.instagram.com/dt.eshanasir/" target="_blank" rel="noreferrer" className="text-cream hover:text-white transition-colors">
+                      @dt.eshanasir
+                    </a>
+                    <span className="text-cream/60"> • </span>
+                    <a href="https://www.instagram.com/dietitian_esha_nasir/" target="_blank" rel="noreferrer" className="text-cream hover:text-white transition-colors">
+                      @dietitian_esha_nasir
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-cream flex-shrink-0">
+                    <Globe size={14} />
+                  </span>
+                  <p className="text-[13px] text-cream">Online Consultations: Pakistan & International</p>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>

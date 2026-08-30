@@ -1,15 +1,5 @@
 import { cn } from "../utils/cn";
-import { Polaroid, Reveal, ScriptLabel, SectionTitle } from "./ui";
-
-const IMG = {
-  smoothie:
-    "https://images.pexels.com/photos/868511/pexels-photo-868511.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  bowl: "https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  bowlsThree:
-    "https://images.pexels.com/photos/7660437/pexels-photo-7660437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  fruits:
-    "https://images.pexels.com/photos/10967988/pexels-photo-10967988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-};
+import { Reveal, ScriptLabel, SectionTitle } from "./ui";
 
 function StepBlock({
   num,
@@ -68,7 +58,7 @@ export default function HowItWorks() {
       <div className="relative mx-auto mt-10 max-w-[920px] md:mt-8">
         <Connector />
 
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-4 md:py-2">
+        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
           <Reveal className="md:justify-self-start md:pl-8">
             <StepBlock
               num="01"
@@ -76,21 +66,16 @@ export default function HowItWorks() {
               desc="Contact us through WhatsApp and choose your consultation or package."
             />
           </Reveal>
-          <Reveal delay={0.15} className="relative mx-auto h-[300px] w-full max-w-[400px] md:h-[330px]">
-            <Polaroid
-              src={IMG.smoothie}
-              alt="Fresh green smoothie and wellness consultation"
-              className="absolute left-1 top-0 z-[1] h-[150px] w-[120px] -rotate-[10deg]"
-            />
-            <Polaroid
-              src="/images/consult.jpg"
-              alt="Nutrition consultation and meal planning"
-              className="absolute bottom-0 right-0 h-[240px] w-[200px] rotate-[5deg] md:h-[260px] md:w-[212px]"
+          <Reveal delay={0.15} className="flex justify-center">
+            <img
+              src="/images/1st.jpeg"
+              alt="Book your consultation"
+              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
             />
           </Reveal>
         </div>
 
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-4 md:py-2">
+        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
           <Reveal delay={0.05} className="md:order-2 md:justify-self-end md:pr-8">
             <StepBlock
               num="02"
@@ -98,21 +83,16 @@ export default function HowItWorks() {
               desc="Your health history, dietary habits, lifestyle, measurements and goals are reviewed before planning begins."
             />
           </Reveal>
-          <Reveal delay={0.15} className="relative mx-auto h-[300px] w-full max-w-[400px] md:order-1 md:h-[330px]">
-            <Polaroid
-              src={IMG.bowl}
-              alt="Healthy meal prep and nutrition assessment"
-              className="absolute left-0 top-2 h-[225px] w-[185px] -rotate-[7deg] md:h-[250px] md:w-[200px]"
-            />
-            <Polaroid
-              src={IMG.bowlsThree}
-              alt="Balanced meals and nutrition planning"
-              className="absolute bottom-1 right-0 z-[1] h-[138px] w-[168px] rotate-[7deg]"
+          <Reveal delay={0.15} className="flex justify-center md:order-1">
+            <img
+              src="/images/2nd.jpeg"
+              alt="Nutrition assessment"
+              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
             />
           </Reveal>
         </div>
 
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-4 md:py-2">
+        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
           <Reveal className="md:justify-self-start md:pl-8">
             <StepBlock
               num="03"
@@ -120,16 +100,11 @@ export default function HowItWorks() {
               desc="A customized nutrition plan is prepared according to your individual requirements, preferences and health condition."
             />
           </Reveal>
-          <Reveal delay={0.15} className="relative mx-auto h-[300px] w-full max-w-[400px] md:h-[330px]">
-            <Polaroid
-              src="/images/kitchen-reader.jpg"
-              alt="Personalized meal planning discussion"
-              className="absolute right-1 top-0 h-[240px] w-[196px] rotate-[4deg] md:h-[260px] md:w-[206px]"
-            />
-            <Polaroid
-              src={IMG.fruits}
-              alt="Healthy food choices and diet planning"
-              className="absolute bottom-2 left-0 z-[1] h-[150px] w-[130px] -rotate-[9deg]"
+          <Reveal delay={0.15} className="flex justify-center">
+            <img
+              src="/images/3rd.jpeg"
+              alt="Personalized diet plan"
+              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
             />
           </Reveal>
         </div>

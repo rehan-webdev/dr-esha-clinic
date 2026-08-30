@@ -34,15 +34,6 @@ const socials = [
   { icon: YoutubeIcon, label: "YouTube", href: "https://www.youtube.com/" },
 ];
 
-const links = [
-  { label: "Home", href: "#main" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Consultation", href: "#consultation" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-forest px-6 pb-10 pt-16 text-cream md:px-10 md:pt-20">
@@ -84,18 +75,6 @@ export default function Footer() {
               Remote Dietitian & Nutritionist
             </span>
           </a>
-
-          <nav className="flex flex-wrap items-center gap-x-8 gap-y-3">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="text-[12px] tracking-wide text-cream/70 transition-colors hover:text-cream"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
 
           <div className="flex items-center gap-3">
             {socials.map((s) => (
