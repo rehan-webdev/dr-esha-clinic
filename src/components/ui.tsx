@@ -27,7 +27,7 @@ export function Reveal({
   );
 }
 
-/* Handwritten script section label, e.g. "About Me" */
+/* Handwritten script section label, e.g. "About Program" */
 export function ScriptLabel({
   children,
   className,
@@ -37,12 +37,7 @@ export function ScriptLabel({
 }) {
   return (
     <Reveal y={14}>
-      <p
-        className={cn(
-          "text-center font-script text-[26px] text-terracotta md:text-[30px]",
-          className,
-        )}
-      >
+      <p className={cn("text-center font-script text-[26px] text-mist md:text-[30px]", className)}>
         {children}
       </p>
     </Reveal>
@@ -61,8 +56,8 @@ export function SectionTitle({
     <Reveal delay={0.08}>
       <h2
         className={cn(
-          "mx-auto mt-4 max-w-[660px] text-center font-serif text-[29px] leading-[1.3] text-espresso md:text-[38px]",
-          className,
+          "mx-auto mt-4 max-w-[660px] text-center font-serif text-[29px] leading-[1.3] text-ink md:text-[38px]",
+          className
         )}
       >
         {children}
@@ -86,8 +81,8 @@ export function Polaroid({
   return (
     <div
       className={cn(
-        "rounded-[4px] bg-white p-2 pb-6 shadow-[0_24px_46px_-18px_rgba(46,36,30,0.32)] ring-1 ring-espresso/5 transition-[transform,box-shadow] duration-500 ease-out hover:z-20 hover:scale-[1.06] hover:rotate-0 hover:shadow-[0_30px_60px_-18px_rgba(46,36,30,0.42)]",
-        className,
+        "bg-white p-2 pb-6 ring-1 ring-ink/5 shadow-[0_24px_46px_-18px_rgba(60,68,46,0.35)] rounded-[4px] transition-[transform,box-shadow] duration-500 ease-out hover:z-20 hover:scale-[1.06] hover:rotate-0 hover:shadow-[0_30px_60px_-18px_rgba(60,68,46,0.45)]",
+        className
       )}
     >
       <img
