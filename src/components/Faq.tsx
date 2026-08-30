@@ -25,6 +25,18 @@ const testimonials = [
       "I appreciated that the plan was designed around my routine and preferences instead of a rigid, generic diet plan.",
     author: "Online Client",
   },
+  {
+    image: "/testimonials/transform.jpeg",
+    quote:
+      "In my clinical practice, I always emphasize that healthy weight management is not about shortcuts, crash diets, or starvation. It is about adopting a personalized Medical Nutrition Therapy (MNT) plan that fits the patient's medical condition, lifestyle, and nutritional needs.",
+    author: "6KG Lost in One Month",
+  },
+  {
+    video: "/testimonials/WhatsApp%20Video%202026-08-30%20at%205.00.32%20PM.mp4",
+    quote:
+      "My transformation journey has been life-changing. I gained confidence and strength while building healthy habits that last.",
+    author: "Weight Gain Success Story",
+  },
 ];
 
 export default function Faq() {
@@ -64,14 +76,24 @@ export default function Faq() {
             <Reveal key={item.author} delay={0.08 * i} className="h-full">
               <article className="group h-full overflow-hidden rounded-[28px] border border-[#d7d9c8] bg-[#f7f2ea] shadow-[0_22px_40px_-30px_rgba(60,68,46,0.4)] transition-transform duration-300 hover:-translate-y-1.5">
                 <div className="relative border-b border-[#d7d9c8] bg-[#f4efe7] p-2">
-                  <img
-                    src={item.image}
-                    alt={item.author}
-                    className="h-[300px] w-full rounded-[20px] object-cover"
-                  />
-                  <div className="absolute left-6 top-6 rounded-full bg-forest px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.22em] text-cream shadow-md">
-                    Before
-                  </div>
+                  {item.video ? (
+                    <video
+                      src={item.video}
+                      className="h-[300px] w-full rounded-[20px] object-cover"
+                      controls
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={item.image}
+                        alt={item.author}
+                        className="h-[300px] w-full rounded-[20px] object-cover"
+                      />
+                      <div className="absolute left-6 top-6 rounded-full bg-forest px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.22em] text-cream shadow-md">
+                        Before
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <div className="flex flex-1 flex-col p-5 md:p-6">
