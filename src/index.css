@@ -1,20 +1,30 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Dt. Momina — warm sand / mocha / terracotta palette
+   ------------------------------------------------------------------ */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", "Georgia", serif;
   --font-script: "Caveat", "Segoe Script", cursive;
 
-  --color-cream: #f7f6f0;
-  --color-shell: #ebeae3;
-  --color-sage: #e7ecdd;
-  --color-sage-line: #ccd3bb;
-  --color-forest: #42513e;
-  --color-forest-deep: #31402c;
-  --color-ink: #35362c;
-  --color-fog: #7a7d6b;
-  --color-mist: #9ea48b;
-  --color-line: #e4e4d6;
+  /* Core palette */
+  --color-sand: #e5d6c1; /* Primary          */
+  --color-mocha: #6b5140; /* Primary Dark     */
+  --color-taupe: #b8a18c; /* Secondary        */
+  --color-terracotta: #a8785f; /* Accent           */
+  --color-cream: #faf7f2; /* Background       */
+  --color-surface: #f1e8dd; /* Surface          */
+  --color-espresso: #2e241e; /* Text             */
+  --color-warmgray: #766a60; /* Secondary Text   */
+  --color-line: #d6c6b5; /* Border           */
+  --color-white: #ffffff;
+
+  /* Working tints derived from the palette */
+  --color-blush: #f7efe6; /* extra-light surface  */
+  --color-clay: #8a5f49; /* accent hover         */
+  --color-deep: #4b3728; /* deep mocha hover     */
+  --color-sandsoft: #efe4d5; /* soft sand wash       */
 }
 
 @layer base {
@@ -23,12 +33,12 @@
   }
 
   body {
-    @apply bg-shell font-sans text-ink antialiased;
+    @apply bg-surface font-sans text-espresso antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: var(--color-forest);
+    background: var(--color-mocha);
     color: var(--color-cream);
   }
 
@@ -36,14 +46,14 @@
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-shell);
+    background: var(--color-surface);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-sage-line);
+    background: var(--color-taupe);
     border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-mist);
+    background: var(--color-mocha);
   }
 }
 
