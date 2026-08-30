@@ -14,13 +14,13 @@ function StepBlock({
 }) {
   return (
     <div className={cn("max-w-[290px]", className)}>
-      <span className="font-serif text-[56px] leading-none text-[#ccd1bb] md:text-[68px]">
+      <span className="font-serif text-[56px] leading-none text-sand md:text-[68px]">
         {num}
       </span>
-      <h3 className="mt-3 font-serif text-[21px] font-medium leading-snug text-ink">
+      <h3 className="mt-3 font-serif text-[21px] font-medium leading-snug text-espresso">
         {title}
       </h3>
-      <p className="mt-2.5 text-[11.5px] leading-[1.8] text-fog">{desc}</p>
+      <p className="mt-2.5 text-[11.5px] leading-[1.8] text-warmgray">{desc}</p>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function Connector() {
     >
       <path
         d="M 235 4 C 500 30 820 120 740 280 C 668 420 260 400 228 540 C 198 682 680 678 720 838 C 748 950 520 1012 380 1032"
-        stroke="#c9cdb4"
+        stroke="#D6C6B5"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeDasharray="0.1 11"
@@ -47,67 +47,72 @@ function Connector() {
   );
 }
 
+const steps = [
+  {
+    num: "01",
+    title: "Book your consultation",
+    desc: "Send a message on WhatsApp, tell me your goal and we'll pick the right plan for you.",
+    img: "/images/step-book.jpg",
+    alt: "Booking a consultation on WhatsApp",
+  },
+  {
+    num: "02",
+    title: "Nutrition assessment",
+    desc: "Your health history, eating habits, routine, measurements and goals are reviewed before we plan.",
+    img: "/images/step-assess.jpg",
+    alt: "Nutrition assessment with notes and fresh food",
+  },
+  {
+    num: "03",
+    title: "Personalized diet plan",
+    desc: "You get a nutrition plan built around your preferences, your lifestyle and what your body actually needs.",
+    img: "/images/step-plan.jpg",
+    alt: "Personalized meal plan and meal prep containers",
+  },
+];
+
 export default function HowItWorks() {
   return (
-    <section id="consultation" className="px-6 pb-28 pt-4">
-      <ScriptLabel>Online Consultation</ScriptLabel>
+    <section id="how-it-works" className="px-6 pb-28 pt-4">
+      <ScriptLabel>How It Works</ScriptLabel>
       <SectionTitle>
-        Professional nutrition consultation — <em className="italic">from anywhere</em>
+        Your journey, in <em className="italic">three simple steps</em>
       </SectionTitle>
 
       <div className="relative mx-auto mt-10 max-w-[920px] md:mt-8">
         <Connector />
 
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
-          <Reveal className="md:justify-self-start md:pl-8">
-            <StepBlock
-              num="01"
-              title="Book your consultation"
-              desc="Contact us through WhatsApp and choose your consultation or package."
-            />
-          </Reveal>
-          <Reveal delay={0.15} className="flex justify-center">
-            <img
-              src="/images/1st.jpeg"
-              alt="Book your consultation"
-              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
-            />
-          </Reveal>
-        </div>
-
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
-          <Reveal delay={0.05} className="md:order-2 md:justify-self-end md:pr-8">
-            <StepBlock
-              num="02"
-              title="Nutrition assessment"
-              desc="Your health history, dietary habits, lifestyle, measurements and goals are reviewed before planning begins."
-            />
-          </Reveal>
-          <Reveal delay={0.15} className="flex justify-center md:order-1">
-            <img
-              src="/images/2nd.jpeg"
-              alt="Nutrition assessment"
-              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
-            />
-          </Reveal>
-        </div>
-
-        <div className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4">
-          <Reveal className="md:justify-self-start md:pl-8">
-            <StepBlock
-              num="03"
-              title="Personalized diet plan"
-              desc="A customized nutrition plan is prepared according to your individual requirements, preferences and health condition."
-            />
-          </Reveal>
-          <Reveal delay={0.15} className="flex justify-center">
-            <img
-              src="/images/3rd.jpeg"
-              alt="Personalized diet plan"
-              className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-lg"
-            />
-          </Reveal>
-        </div>
+        {steps.map((step, i) => (
+          <div
+            key={step.num}
+            className="relative grid items-center gap-10 py-8 md:grid-cols-2 md:gap-8 md:py-4"
+          >
+            <Reveal
+              delay={i % 2 === 1 ? 0.05 : 0}
+              className={cn(
+                i % 2 === 1
+                  ? "md:order-2 md:justify-self-end md:pr-8"
+                  : "md:justify-self-start md:pl-8",
+              )}
+            >
+              <StepBlock num={step.num} title={step.title} desc={step.desc} />
+            </Reveal>
+            <Reveal
+              delay={0.15}
+              className={cn(
+                "flex justify-center",
+                i % 2 === 1 ? "md:order-1" : "",
+              )}
+            >
+              <img
+                src={step.img}
+                alt={step.alt}
+                loading="lazy"
+                className="h-[280px] w-[220px] rounded-[20px] object-cover shadow-[0_24px_44px_-24px_rgba(46,36,30,0.45)]"
+              />
+            </Reveal>
+          </div>
+        ))}
       </div>
     </section>
   );
